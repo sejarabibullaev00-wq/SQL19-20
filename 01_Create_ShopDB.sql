@@ -1,0 +1,27 @@
+USE master;
+GO
+
+CREATE DATABASE ShopDB
+ON PRIMARY
+(
+    NAME = N'ShopDB',
+    FILENAME = N'C:\SQLData\ShopDB.mdf',
+    SIZE = 50MB,
+    FILEGROWTH = 10MB
+)
+LOG ON
+(
+    NAME = N'ShopDB_Log',
+    FILENAME = N'C:\SQLData\ShopDB_Log.ldf',
+    SIZE = 50MB,
+    FILEGROWTH = 10MB
+);
+GO
+
+ALTER DATABASE ShopDB
+ADD FILEGROUP ShopData1;
+GO
+
+ALTER DATABASE ShopDB
+ADD FILEGROUP ShopData2;
+GO
